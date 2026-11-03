@@ -1,0 +1,165 @@
+{
+  "n_rows": 41188,
+  "n_duplicates": 12,
+  "share_yes": 0.11265417111780131,
+  "rows_with_unknown": 10698,
+  "majority_val_accuracy": 0.8873102610807528,
+  "logreg_val": {
+    "precision": 0.6993464052287581,
+    "recall": 0.23060344827586207,
+    "f1": 0.34683954619124796,
+    "roc_auc": 0.801968132235032
+  },
+  "base_nn": {
+    "best_epoch": 5,
+    "min_val_loss": 0.2759433686733246,
+    "final_val_loss": 0.2958745062351227,
+    "final_train_loss": 0.2455640286207199,
+    "val_auc_at_best": 0.803064227104187,
+    "epochs_run": 50
+  },
+  "learning_rate": {
+    "0.0001": {
+      "best_epoch": 41,
+      "min_val_loss": 0.27606576681137085,
+      "final_val_loss": 0.2761562168598175,
+      "final_train_loss": 0.2692144513130188,
+      "val_auc_at_best": 0.8011578917503357,
+      "epochs_run": 50
+    },
+    "0.001": {
+      "best_epoch": 5,
+      "min_val_loss": 0.2759433686733246,
+      "final_val_loss": 0.2958745062351227,
+      "final_train_loss": 0.2455640286207199,
+      "val_auc_at_best": 0.803064227104187,
+      "epochs_run": 50
+    },
+    "0.1": {
+      "best_epoch": 17,
+      "min_val_loss": 0.28401321172714233,
+      "final_val_loss": 0.28463464975357056,
+      "final_train_loss": 0.2890329658985138,
+      "val_auc_at_best": 0.7942186594009399,
+      "epochs_run": 50
+    }
+  },
+  "large_nn": {
+    "best_epoch": 2,
+    "min_val_loss": 0.27812251448631287,
+    "final_val_loss": 1.9322861433029175,
+    "final_train_loss": 0.03497058525681496,
+    "val_auc_at_best": 0.7966923713684082,
+    "epochs_run": 150
+  },
+  "regularised_nn": {
+    "best_epoch": 8,
+    "min_val_loss": 0.2795642614364624,
+    "final_val_loss": 0.29251039028167725,
+    "final_train_loss": 0.24527810513973236,
+    "val_auc_at_best": 0.7950088977813721,
+    "epochs_run": 18
+  },
+  "linear_nn": {
+    "best_epoch": 29,
+    "min_val_loss": 0.27740803360939026,
+    "final_val_loss": 0.2775282561779022,
+    "final_train_loss": 0.27870339155197144,
+    "val_auc_at_best": 0.8003342747688293,
+    "epochs_run": 50
+  },
+  "activation_comparison_val": {
+    "logistic regression": {
+      "precision": 0.6993464052287581,
+      "recall": 0.23060344827586207,
+      "f1": 0.34683954619124796,
+      "roc_auc": 0.801968132235032
+    },
+    "NN, linear hidden": {
+      "precision": 0.6993006993006993,
+      "recall": 0.21551724137931033,
+      "f1": 0.32948929159802304,
+      "roc_auc": 0.8000176525344145
+    },
+    "NN, ReLU hidden": {
+      "precision": 0.5691699604743083,
+      "recall": 0.3103448275862069,
+      "f1": 0.401673640167364,
+      "roc_auc": 0.7727945539940444
+    }
+  },
+  "model_selection_val": {
+    "logistic regression": {
+      "val_roc_auc": 0.801968132235032,
+      "val_loss": 0.2754523636535733
+    },
+    "NN linear hidden": {
+      "val_roc_auc": 0.8000176525344145,
+      "val_loss": 0.2775282859802246
+    },
+    "large NN + Dropout + EarlyStopping": {
+      "val_roc_auc": 0.7950908699971214,
+      "val_loss": 0.27956423163414
+    },
+    "base NN (32-16 ReLU, lr 1e-3)": {
+      "val_roc_auc": 0.7727945539940444,
+      "val_loss": 0.2958744168281555
+    }
+  },
+  "selected_model": "NN linear hidden",
+  "test": {
+    "roc_auc": 0.7989866737915936,
+    "precision": 0.6779026217228464,
+    "recall": 0.19504310344827586,
+    "f1": 0.302928870292887,
+    "confusion_matrix": [
+      [
+        7222,
+        86
+      ],
+      [
+        747,
+        181
+      ]
+    ]
+  },
+  "thresholds_test": [
+    {
+      "threshold": 0.5,
+      "precision": 0.6779026217228464,
+      "recall": 0.19504310344827586,
+      "f1": 0.302928870292887,
+      "customers flagged": 267,
+      "TP": 181,
+      "FP": 86,
+      "FN": 747
+    },
+    {
+      "threshold": 0.3,
+      "precision": 0.5025445292620865,
+      "recall": 0.42564655172413796,
+      "f1": 0.46091015169194866,
+      "customers flagged": 786,
+      "TP": 395,
+      "FP": 391,
+      "FN": 533
+    },
+    {
+      "threshold": 0.2,
+      "precision": 0.45430579964850615,
+      "recall": 0.5571120689655172,
+      "f1": 0.5004840271055179,
+      "customers flagged": 1138,
+      "TP": 517,
+      "FP": 621,
+      "FN": 411
+    }
+  ],
+  "top_1000_calls": {
+    "score cut-off": 0.22718438506126404,
+    "precision@1000": 0.475,
+    "subscribers reached": 475,
+    "recall@1000": 0.5118534482758621,
+    "random-calling expectation": 112.67605633802818
+  }
+}

@@ -1,0 +1,6 @@
+data/bank+marketing.zip
+data/bank-additional.zip
+data/bank-additional/
+__MACOSX/
+.ipynb_checkpoints/
+.DS_Store
